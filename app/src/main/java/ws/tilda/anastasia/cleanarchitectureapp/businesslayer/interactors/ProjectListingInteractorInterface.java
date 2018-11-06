@@ -4,7 +4,7 @@ import java.util.List;
 
 import ws.tilda.anastasia.cleanarchitectureapp.businesslayer.models.ProjectModel;
 
-public interface ProjectListingInterface {
+public interface ProjectListingInteractorInterface {
 
     interface CallBack {
 
