@@ -6,5 +6,5 @@ public interface BaseView {
 
     void hideProgress();
 
-    void showError();
+    void showError(String error);
 }

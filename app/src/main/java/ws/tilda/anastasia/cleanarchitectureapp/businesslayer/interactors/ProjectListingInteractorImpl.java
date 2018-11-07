@@ -9,12 +9,12 @@ import ws.tilda.anastasia.cleanarchitectureapp.businesslayer.repositories.Projec
  * Provides the data to the presentation layer
  */
 
-public class ProjectListingInteractorInteractorImpl implements ProjectListingInteractorInterface {
+public class ProjectListingInteractorImpl implements ProjectListingInteractorInterface {
     ProjectListingInteractorInterface.CallBack mCallBack;
     ProjectRepository mProjectRepository;
 
 
-    public ProjectListingInteractorInteractorImpl(CallBack callback, ProjectRepository projectRepository) {
+    public ProjectListingInteractorImpl(CallBack callback, ProjectRepository projectRepository) {
         mCallBack = callback;
         mProjectRepository = projectRepository;
     }
