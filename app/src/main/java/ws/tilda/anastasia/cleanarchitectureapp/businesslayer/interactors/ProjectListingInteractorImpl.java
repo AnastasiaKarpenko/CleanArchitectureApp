@@ -17,25 +17,26 @@ public class ProjectListingInteractorImpl implements ProjectListingInteractorInt
     public ProjectListingInteractorImpl(CallBack callback, ProjectRepository projectRepository) {
         mCallBack = callback;
         mProjectRepository = projectRepository;
+        getData();
     }
 
     public void getData() {
         final List<ProjectModel> projectModelList = mProjectRepository.getProjectListing();
 
         if (projectModelList == null || projectModelList.size() == 0) {
-            callError();
+            notifyError();
             return;
         } else {
-            NofifyDataUpdate(projectModelList);
+            notifyDataUpdate(projectModelList);
         }
     }
 
-    private void NofifyDataUpdate(List<ProjectModel> projectModelList) {
+    private void notifyDataUpdate(List<ProjectModel> projectModelList) {
         mCallBack.onProjectListingRetreived(projectModelList);
     }
 
-    private void callError() {
-        mCallBack.onProjectListingRetreivalFailed("Project Listing fetching failed");
+    private void notifyError() {
+        mCallBack.onProjectListingRetreivalFailed("Project list is empty");
     }
 
 
