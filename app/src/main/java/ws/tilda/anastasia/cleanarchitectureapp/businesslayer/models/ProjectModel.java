@@ -1,22 +1,35 @@
 package ws.tilda.anastasia.cleanarchitectureapp.businesslayer.models;
 
+
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity(tableName = "project")
 public class ProjectModel {
-    String mTitle;
-    String mDescription;
+
+    @PrimaryKey(autoGenerate = true)
+    private int projectId;
+
+    @ColumnInfo(name = "title")
+    private String title;
+
+    @ColumnInfo(name = "description")
+    private String description;
 
     public String getTitle() {
-        return mTitle;
+        return title;
     }
 
     public void setTitle(String title) {
-        mTitle = title;
+        this.title = title;
     }
 
     public String getDescription() {
-        return mDescription;
+        return description;
     }
 
     public void setDescription(String description) {
-        mDescription = description;
+        this.description = description;
     }
 }
