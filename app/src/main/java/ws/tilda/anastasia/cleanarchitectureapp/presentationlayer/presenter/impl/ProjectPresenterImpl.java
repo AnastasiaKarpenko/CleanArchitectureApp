@@ -13,7 +13,7 @@ public class ProjectPresenterImpl implements ProjectPresenter, ProjectListingInt
     ProjectPresenter.View mView;
     ProjectRepository mProjectRepository;
 
-    ProjectPresenterImpl(View view, ProjectRepository projectRepository) {
+    public ProjectPresenterImpl(View view, ProjectRepository projectRepository) {
         mView = view;
         mProjectRepository = projectRepository;
     }
