@@ -6,7 +6,7 @@ import ws.tilda.anastasia.cleanarchitectureapp.businesslayer.models.ProjectModel
 import ws.tilda.anastasia.cleanarchitectureapp.businesslayer.repositories.ProjectRepository;
 
 /**
- * Provides the data to the presentation layer
+ * Provides the data to the presenter
  */
 
 public class ProjectListingInteractorImpl implements ProjectListingInteractorInterface {
