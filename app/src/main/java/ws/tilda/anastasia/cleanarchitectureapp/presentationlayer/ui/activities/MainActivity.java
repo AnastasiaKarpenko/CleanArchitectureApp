@@ -34,6 +34,12 @@ public class MainActivity extends AppCompatActivity implements ProjectPresenter.
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        mProjectPresenter.onResume();
+    }
+
+    @Override
     public void displayProjectList(List<ProjectModel> projectModelList) {
 
     }
