@@ -1,7 +1,8 @@
 package ws.tilda.anastasia.cleanarchitectureapp.presentationlayer.ui.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -24,16 +25,18 @@ public class MainActivity extends AppCompatActivity implements ProjectPresenter.
 
     @Override
     public void showProgress() {
-
+        Toast.makeText(this, "Progress starts", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void hideProgress() {
+        Toast.makeText(this, "Progress ends", Toast.LENGTH_SHORT).show();
 
     }
 
     @Override
     public void showError(String error) {
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
 
     }
 }
