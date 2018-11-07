@@ -18,6 +18,28 @@ public class ProjectListingRepository implements ProjectRepository {
             projectModelList.add(projectModel);
         }
 
+        // Let's simulate some network/database lag
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
         return projectModelList;
     }
+
+    private static void populateProjectListing(ProjectDatabase projectDatabase) {
+        ProjectModel projectModel = new ProjectModel();
+        projectModel.setTitle("Project 1");
+        projectModel.setDescription("Desc");
+        addProject(projectDatabase, projectModel);
+    }
+
+    private static void addProject(ProjectDatabase projectDatabase, ProjectModel projectModel) {
+        projectDatabase.projectDAO().insertAll(projectModel);
+    }
+
+
 }
